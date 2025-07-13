@@ -117,11 +117,6 @@ body {
   font-size: 18px;
   cursor: pointer;
 }
-.discord-embed {
-  margin-top: 25px;
-  border-radius: 8px;
-  overflow: hidden;
-}
 
 /* Ripple click effect */
 .ripple {
