@@ -4,92 +4,69 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lino's Links</title>
-
-  <!-- Meta & Social Tags -->
-  <meta name="last-modified" content="2025-07-12T01:22:45+0000">
-  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f7f7">
-  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1b1b1e">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover" />
-
-  <meta property="og:title" content="Lino's Links" />
-  <meta name="author" content="@excalian" />
-  <meta property="og:locale" content="en" />
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0d1117" media="(prefers-color-scheme: dark)">
   <meta name="description" content="A filmmaker, designer, and tech tinkerer from the U.S., chasing mastery across every creative trade." />
-  <meta property="og:description" content="A filmmaker, designer, and tech tinkerer from the U.S., chasing mastery across every creative trade." />
-  <meta property="og:site_name" content="Lino's Links" />
   <meta property="og:image" content="./images/profile.jpeg" />
-  <meta property="og:type" content="article" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta property="twitter:image" content="./images/profile.jpeg" />
-  <meta property="twitter:title" content="Lino's Links" />
-
-  <!-- Favicons -->
-  <link rel="apple-touch-icon" sizes="180x180" href="./images/favicons/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="./images/favicons/favicon-16x16.png">
-  <link rel="manifest" href="./images/favicons/site.webmanifest">
-  <link rel="shortcut icon" href="./images/favicons/favicon.ico">
-  <meta name="apple-mobile-web-app-title" content="Excalian's Links">
-  <meta name="application-name" content="Excalian's Links">
-  <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="msapplication-config" content="./images/favicons/browserconfig.xml">
-
-  <!-- Styles -->
+  <meta name="author" content="@excalian" />
   <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
+  <div class="toggle-container">
+    <button id="toggleMode" aria-label="Toggle light/dark mode">🌓</button>
+  </div>
+
   <div class="container">
     <div class="profile">
-      <img src="./images/profile.jpeg" alt="Lino's Profile Picture" class="profile-pic" />
+      <img src="./images/profile.jpeg" alt="Profile Picture" class="profile-pic" />
       <h1 class="name">@excalian</h1>
-      <p class="description">Filmmaker, designer, and tech tinkerer chasing mastery across creative disciplines.</p>
+      <p class="description">Follow my dreams and aspirations across film, art, and tech. Dive into what I create, explore, and learn.</p>
     </div>
 
     <div class="links">
-
-      <a href="https://www.instagram.com/excalian1/" target="_blank" class="link-button" title="Personal Instagram">
-        <i class="fa-brands fa-instagram"></i> @excalian1  
-        <div class="link-button-text">Life, thoughts, and personal moments — the casual side of Lino.</div>
+      <a href="https://www.instagram.com/excalian1/" target="_blank" class="link-button" data-click="main-instagram">
+        <i class="fab fa-instagram"></i> excalian1
       </a>
-
-      <a href="https://www.instagram.com/excalian.film/" target="_blank" class="link-button" title="Film Instagram">
-        <i class="fa-brands fa-instagram"></i> @excalian.film  
-        <div class="link-button-text">BTS, stills, and edits from what I’m filming or finishing.</div>
+      <a href="https://www.instagram.com/excalian.film/" target="_blank" class="link-button" data-click="film-instagram">
+        <i class="fab fa-instagram"></i> excalian.film
       </a>
-
-      <a href="https://www.instagram.com/excalian.art/" target="_blank" class="link-button" title="Art & Photography Instagram">
-        <i class="fa-brands fa-instagram"></i> @excalian.art  
-        <div class="link-button-text">Design, art, and photography — exploring all forms of visual creation.</div>
+      <a href="https://www.instagram.com/excalian.art/" target="_blank" class="link-button" data-click="art-instagram">
+        <i class="fab fa-instagram"></i> excalian.art
       </a>
-
+<div class="discord-embed">
+  <iframe
+    src="https://discord.com/widget?id=1105707559526092820&theme=dark"
+    width="100%"
+    height="300"
+    allowtransparency="true"
+    frameborder="0"
+    sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+  ></iframe>
+</div>
     </div>
 
     <div class="button-container">
       <div class="button-group">
-
-        <a href="https://github.com/Excalian/" target="_blank" class="icon-button" title="GitHub">
-          <i class="fa-brands fa-github"></i>
+        <a href="https://github.com/Excalian/" title="GitHub" target="_blank" class="icon-button" data-click="github">
+          <i class="fab fa-github"></i>
         </a>
-
-        <a href="https://www.excalian.com/" target="_blank" class="icon-button" title="Main Website">
-          <i class="fa-solid fa-rss"></i>
+        <a href="https://www.excalian.com/" title="Website" target="_blank" class="icon-button" data-click="website">
+          <i class="fas fa-globe"></i>
         </a>
-
-        <a href="mailto:film@excalian.com" class="icon-button" title="Email Me">
-          <i class="fa-solid fa-envelope"></i>
+        <a href="mailto:film@excalian.com" title="Email" target="_blank" class="icon-button" data-click="email">
+          <i class="fas fa-envelope"></i>
         </a>
-
       </div>
     </div>
 
     <footer class="footer">
-      © 2025 <a href="https://www.excalian.com" target="_blank">Excalian</a> — filmmaker, designer & creative explorer.
+      <div class="copyright">
+        © 2025 <a href="https://www.excalian.com" target="_blank">Excalian</a>
+      </div>
     </footer>
   </div>
 
-  <script src="fontawesome/js/all.js" data-auto-replace-svg="nest"></script>
   <script src="./scripts.js"></script>
 </body>
 </html>
