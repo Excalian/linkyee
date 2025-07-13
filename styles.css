@@ -1,26 +1,37 @@
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
 body {
-  background-color: #ffffff;
-  color: #000;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
+  background: #ffffff;
+  color: #111;
+  transition: background 0.3s ease, color 0.3s ease;
   text-align: center;
-  padding: 20px;
-  transition: background 0.3s, color 0.3s;
+  padding: 2rem 1rem;
+}
+
+.dark-mode {
+  background: #0d1117;
+  color: #f0f6fc;
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+  font-size: 1.2rem;
+  user-select: none;
+  z-index: 100;
 }
 
 .container {
-  width: 90%;
-  max-width: 450px;
+  max-width: 480px;
+  margin: 0 auto;
 }
 
 .profile-pic {
@@ -28,140 +39,103 @@ body {
   height: 120px;
   border-radius: 50%;
   object-fit: cover;
-  margin-bottom: 15px;
-  border: 2px solid black;
+  margin-bottom: 1rem;
+  border: 3px solid #ccc;
+  transition: border-color 0.3s ease;
 }
 
 .name {
   font-size: 28px;
-  font-weight: bold;
-  margin: 10px 0;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
 }
 
 .description {
   font-size: 16px;
-  margin-bottom: 30px;
-  line-height: 1.6;
   color: #555;
+  margin-bottom: 2rem;
+  line-height: 1.5;
 }
 
 .links {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  margin-top: 10px;
+  gap: 1rem;
 }
 
 .link-button {
-  display: inline-flex;
+  padding: 1rem;
+  background: #f1f1f1;
+  color: #000;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.25s ease;
+  display: flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
-  background-color: #f0f0f0;
-  color: black;
-  padding: 15px;
-  border-radius: 8px;
-  font-size: 18px;
-  font-weight: 500;
-  transition: background-color 0.3s, transform 0.2s;
 }
 
 .link-button:hover {
-  background-color: #e0e0e0;
-  transform: scale(1.05);
+  background: #e0e0e0;
+  transform: scale(1.03);
+}
+
+.link-button.clicked {
+  animation: clickPulse 0.3s ease;
+}
+
+@keyframes clickPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(0.97); }
+  100% { transform: scale(1); }
 }
 
 .button-container {
   display: flex;
-  align-items: center;
   justify-content: center;
-}
-
-.button-group {
-  display: flex;
-  gap: 15px;
-  margin-top: 25px;
+  gap: 1.5rem;
+  margin-top: 2rem;
 }
 
 .icon-button {
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: none;
-  color: black;
-  cursor: pointer;
-  transition: transform 0.2s;
+  font-size: 24px;
+  color: #333;
+  transition: transform 0.2s ease;
 }
 
 .icon-button:hover {
-  transform: scale(1.1);
-  color: #666;
+  transform: scale(1.15);
+  color: #000;
+}
+
+.icon-button.clicked {
+  animation: clickPulse 0.3s ease;
 }
 
 .footer {
-  margin-top: 40px;
+  margin-top: 3rem;
   font-size: 14px;
   color: #777;
 }
 
-.toggle-container {
-  position: absolute;
-  top: 15px;
-  right: 15px;
+.dark-mode .profile-pic {
+  border-color: #f0f6fc;
 }
-
-#toggleMode {
-  background: none;
-  border: none;
-  font-size: 18px;
-  cursor: pointer;
-}
-
-/* Ripple click effect */
-.ripple {
-  position: absolute;
-  border-radius: 50%;
-  transform: scale(0);
-  animation: ripple-animation 0.6s linear;
-  background: rgba(0, 123, 255, 0.4); /* soft blue, tweak if needed */
-  pointer-events: none;
-  z-index: 9999;
-}
-
-@keyframes ripple-animation {
-  to {
-    transform: scale(4);
-    opacity: 0;
-  }
-}
-
-/* Dark mode */
-body.dark {
-  background-color: #0d1117;
-  color: #ffffff;
-}
-
-body.dark .description,
-body.dark .footer {
+.dark-mode .description {
   color: #c9d1d9;
 }
-
-body.dark .link-button {
-  background-color: #21262d;
-  color: #ffffff;
+.dark-mode .link-button {
+  background: #1f2937;
+  color: #f0f6fc;
 }
-
-body.dark .link-button:hover {
-  background-color: #30363d;
+.dark-mode .link-button:hover {
+  background: #2a3545;
 }
-
-body.dark .icon-button {
-  color: #ffffff;
+.dark-mode .icon-button {
+  color: #f0f6fc;
 }
-
-@media (prefers-color-scheme: dark) {
-  .ripple {
-    background: rgba(0, 123, 255, 0.3);
-  }
+.dark-mode .footer {
+  color: #8b949e;
 }
